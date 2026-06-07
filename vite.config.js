@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // Vite configuration for GitHub Pages deployment
 export default defineConfig({
-  base: '/portfolio/',
+  base: '/Portfolio/',
   plugins: [
     tailwindcss(),
     react(),

@@ -14,7 +14,7 @@ export const navigate = (to) => {
 export default function CustomRouter() {
   const [path, setPath] = useState(() => {
     let p = window.location.pathname;
-    if (p.startsWith('/portfolio')) {
+    if (p.toLowerCase().startsWith('/portfolio')) {
       p = p.substring('/portfolio'.length);
     }
     return p;
@@ -23,7 +23,7 @@ export default function CustomRouter() {
   useEffect(() => {
     const handlePopState = () => {
       let p = window.location.pathname;
-      if (p.startsWith('/portfolio')) {
+      if (p.toLowerCase().startsWith('/portfolio')) {
         p = p.substring('/portfolio'.length);
       }
       setPath(p);
