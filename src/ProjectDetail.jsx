@@ -2,6 +2,13 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { navigate } from './CustomRouter';
 
+const getAssetUrl = (path) => {
+  if (!path) return '';
+  const base = import.meta.env.BASE_URL || '/';
+  const cleanBase = base.endsWith('/') ? base.slice(0, -1) : base;
+  return path.startsWith('/') ? `${cleanBase}${path}` : `${cleanBase}/${path}`;
+};
+
 const projectMetadata = {
   "1": { title: "EDUGENIUS", category: "Full-Stack Development", year: "2025", count: 1, liveUrl: "https://edu-genius-b28b.onrender.com", githubUrl: "https://github.com/himanshi1109/edu-Genius" },
   "2": { title: "VIBENOW", category: "Full-Stack Development", year: "2024", count: 1, liveUrl: "/project/2", githubUrl: "https://github.com/himanshi1109/moodGo" },
@@ -62,7 +69,7 @@ export default function ProjectDetail({ projectId }) {
   const images = [];
   for (let i = 1; i <= project.count; i++) {
     const suffix = ["5", "6", "7", "8"].includes(projectId) ? "?v=2" : "";
-    images.push(`/project-images/${projectId}/${i}.png${suffix}`);
+    images.push(getAssetUrl(`/project-images/${projectId}/${i}.png${suffix}`));
   }
 
   return (

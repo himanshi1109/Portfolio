@@ -3,6 +3,13 @@ import { motion, useScroll, useTransform } from 'framer-motion';
 import Lenis from 'lenis';
 import { navigate } from './CustomRouter';
 
+const getAssetUrl = (path) => {
+  if (!path) return '';
+  const base = import.meta.env.BASE_URL || '/';
+  const cleanBase = base.endsWith('/') ? base.slice(0, -1) : base;
+  return path.startsWith('/') ? `${cleanBase}${path}` : `${cleanBase}/${path}`;
+};
+
 const projectsData = [
   { id: "1", title: "EduGenius", image: "/project-images/1/1.png", liveUrl: "https://edu-genius-b28b.onrender.com", githubUrl: "https://github.com/himanshi1109/edu-Genius" },
   { id: "2", title: "VibeNow", image: "/project-images/2/1.png?v=3", liveUrl: "/project/2", githubUrl: "https://github.com/himanshi1109/moodGo" },
@@ -112,7 +119,7 @@ function ProjectCard({ project, index, isHero, setIsHovered }) {
           <img 
             alt={project.title} 
             className="w-full h-full object-cover transition-bouncy scale-100 group-hover:scale-[1.06]"
-            src={project.image}
+            src={getAssetUrl(project.image)}
             loading="lazy"
           />
         </div>
@@ -383,7 +390,7 @@ export default function Home() {
             <img 
               alt="Himanshi Khatri — Creative Portrait" 
               className="w-full h-auto aspect-[1024/505] object-cover block max-w-none" 
-              src="/images/portrait.png?v=2"
+              src={getAssetUrl("/images/portrait.png?v=2")}
             />
             <div 
               className="absolute inset-0 pointer-events-none" 
@@ -512,7 +519,7 @@ export default function Home() {
                   <img 
                     alt="Professional CV Resume — Himanshi Khatri" 
                     className="w-full h-full object-contain"
-                    src="/images/Professional-CV-Resume.png"
+                    src={getAssetUrl("/images/Professional-CV-Resume.png")}
                     loading="lazy"
                   />
                 </motion.div>
@@ -524,7 +531,7 @@ export default function Home() {
                   <img 
                     alt="Himanshi Khatri — Professional Portrait" 
                     className="w-full h-full object-cover"
-                    src="/images/professional-image.png"
+                    src={getAssetUrl("/images/professional-image.png")}
                     loading="lazy"
                   />
                 </motion.div>
