@@ -4,16 +4,29 @@ import ProjectDetail from './ProjectDetail';
 
 // Global navigation helper that components can import
 export const navigate = (to) => {
-  window.history.pushState({}, '', to);
+  const base = import.meta.env.BASE_URL || '/';
+  const cleanBase = base.endsWith('/') ? base.slice(0, -1) : base;
+  const target = to.startsWith('/') ? `${cleanBase}${to}` : `${cleanBase}/${to}`;
+  window.history.pushState({}, '', target);
   window.dispatchEvent(new Event('popstate'));
 };
 
 export default function CustomRouter() {
-  const [path, setPath] = useState(window.location.pathname);
+  const [path, setPath] = useState(() => {
+    let p = window.location.pathname;
+    if (p.startsWith('/portfolio')) {
+      p = p.substring('/portfolio'.length);
+    }
+    return p;
+  });
 
   useEffect(() => {
     const handlePopState = () => {
-      setPath(window.location.pathname);
+      let p = window.location.pathname;
+      if (p.startsWith('/portfolio')) {
+        p = p.substring('/portfolio'.length);
+      }
+      setPath(p);
       window.scrollTo(0, 0);
     };
 
