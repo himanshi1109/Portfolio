@@ -11,7 +11,7 @@ const getAssetUrl = (path) => {
 
 const projectMetadata = {
   "1": { title: "EDUGENIUS", category: "Full-Stack Development", year: "2025", count: 1, liveUrl: "https://edu-genius-b28b.onrender.com", githubUrl: "https://github.com/himanshi1109/edu-Genius" },
-  "2": { title: "VIBENOW", category: "Full-Stack Development", year: "2024", count: 1, liveUrl: "/project/2", githubUrl: "https://github.com/himanshi1109/moodGo" },
+  "2": { title: "VIBENOW", category: "Full-Stack Development", year: "2024", count: 1, liveUrl: "https://vibenow.onrender.com/", githubUrl: "https://github.com/himanshi1109/VibeNow" },
   "12": { title: "HRMS PORTAL", category: "Full-Stack Development", year: "2026", count: 1, liveUrl: "https://hrms-5wnb.onrender.com", githubUrl: "https://github.com/himanshi1109/HRMS" },
   "3": { title: "POKEGAME", category: "Game Quiz App", year: "2024", count: 1, liveUrl: "https://pokemon-game-self.vercel.app/", githubUrl: "https://github.com/himanshi1109/pokemonGame" },
   "4": { title: "GEN COOK AI", category: "AI Powered Web App", year: "2024", count: 1, liveUrl: "https://himanshi1109.github.io/Gen-CookAI/", githubUrl: "https://github.com/himanshi1109/Gen-CookAI" },
