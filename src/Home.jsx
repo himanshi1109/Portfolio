@@ -428,7 +428,7 @@ export default function Home() {
 
             {/* Grid of Featured Projects (2-column layout) */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-7">
-              {projectsData.slice(0, 5).map((project, idx) => (
+              {projectsData.slice(0, 6).map((project, idx) => (
                 <ProjectCard 
                   key={project.id} 
                   project={project} 
@@ -462,7 +462,7 @@ export default function Home() {
 
             {/* Grid of UI Clone Projects (3-column layout) */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-7">
-              {projectsData.slice(5, 11).map((project, idx) => (
+              {projectsData.slice(6, 12).map((project, idx) => (
                 <ProjectCard 
                   key={project.id} 
                   project={project} 
