@@ -12,6 +12,7 @@ const getAssetUrl = (path) => {
 const projectMetadata = {
   "1": { title: "EDUGENIUS", category: "Full-Stack Development", year: "2025", count: 1, liveUrl: "https://edu-genius-b28b.onrender.com", githubUrl: "https://github.com/himanshi1109/edu-Genius" },
   "2": { title: "VIBENOW", category: "Full-Stack Development", year: "2024", count: 1, liveUrl: "/project/2", githubUrl: "https://github.com/himanshi1109/moodGo" },
+  "12": { title: "HRMS PORTAL", category: "Full-Stack Development", year: "2026", count: 1, liveUrl: "https://hrms-5wnb.onrender.com", githubUrl: "https://github.com/himanshi1109/HRMS" },
   "3": { title: "POKEGAME", category: "Game Quiz App", year: "2024", count: 1, liveUrl: "https://pokemon-game-self.vercel.app/", githubUrl: "https://github.com/himanshi1109/pokemonGame" },
   "4": { title: "GEN COOK AI", category: "AI Powered Web App", year: "2024", count: 1, liveUrl: "https://himanshi1109.github.io/Gen-CookAI/", githubUrl: "https://github.com/himanshi1109/Gen-CookAI" },
   "5": { title: "GORILLA", category: "Frontend Design UI Clone", year: "2024", count: 1, liveUrl: "https://gorilla-science-tawny.vercel.app/", githubUrl: "https://github.com/himanshi1109/Gorilla-Science" },
@@ -69,7 +70,8 @@ export default function ProjectDetail({ projectId }) {
   const images = [];
   for (let i = 1; i <= project.count; i++) {
     const suffix = ["5", "6", "7", "8"].includes(projectId) ? "?v=2" : "";
-    images.push(getAssetUrl(`/project-images/${projectId}/${i}.png${suffix}`));
+    const ext = projectId === "12" ? ".jpg" : ".png";
+    images.push(getAssetUrl(`/project-images/${projectId}/${i}${ext}${suffix}`));
   }
 
   return (

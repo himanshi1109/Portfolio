@@ -13,6 +13,7 @@ const getAssetUrl = (path) => {
 const projectsData = [
   { id: "1", title: "EduGenius", image: "/project-images/1/1.png", liveUrl: "https://edu-genius-b28b.onrender.com", githubUrl: "https://github.com/himanshi1109/edu-Genius" },
   { id: "2", title: "VibeNow", image: "/project-images/2/1.png?v=3", liveUrl: "/project/2", githubUrl: "https://github.com/himanshi1109/moodGo" },
+  { id: "12", title: "HRMS Portal", image: "/project-images/12/1.jpg", liveUrl: "https://hrms-5wnb.onrender.com", githubUrl: "https://github.com/himanshi1109/HRMS" },
   { id: "3", title: "PokeGame", image: "/project-images/3/1.png", liveUrl: "https://pokemon-game-self.vercel.app/", githubUrl: "https://github.com/himanshi1109/pokemonGame" },
   { id: "4", title: "Gen Cook AI", image: "/project-images/4/1.png?v=3", liveUrl: "https://himanshi1109.github.io/Gen-CookAI/", githubUrl: "https://github.com/himanshi1109/Gen-CookAI" },
   { id: "11", title: "Hisaab-Kitaab", image: "/project-images/11/1.png", liveUrl: "https://hisaab-kitaab-nine.vercel.app/", githubUrl: "https://github.com/himanshi1109/hisaab-kitaab" },
@@ -53,6 +54,7 @@ const getBadgeDetails = (id) => {
   switch (id) {
     case "1":
     case "2":
+    case "12":
       return { label: "Full Stack", bg: "bg-[#ff5a00]/10 text-[#ff5a00] border border-[#ff5a00]/30 backdrop-blur-sm" };
     case "4":
       return { label: "AI Powered", bg: "bg-purple-500/10 text-purple-400 border border-purple-500/30 backdrop-blur-sm" };
